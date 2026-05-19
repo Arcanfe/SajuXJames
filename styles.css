@@ -29,7 +29,7 @@ body {
 }
 
 .ticker-track span {
-  font-size: clamp(0.95rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.1vw, 1.1rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -55,7 +55,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   /* top | right(inner) | bottom | left(outer) */
-  padding: clamp(1rem, 3vh, 4rem) clamp(1.5rem, 2.5vw, 3rem) clamp(1rem, 3vh, 4rem) clamp(5rem, 9vw, 12rem);
+  padding: clamp(1rem, 3vh, 4rem) clamp(1.5rem, 2.5vw, 3rem) clamp(0.3rem, 0.8vh, 1rem) clamp(5rem, 9vw, 12rem);
   min-width: 0;
   height: 100%;
   overflow-y: auto;
@@ -566,8 +566,17 @@ input.has-error {
     margin-bottom: 4vh;
   }
 
+  .img-logo {
+    max-height: clamp(24px, 4.5vh, 55px);
+  }
+
   .title {
+    font-size: clamp(2rem, min(6.5vw, 11vh), 11rem);
     margin-bottom: 3vh;
+  }
+
+  .subtitle {
+    font-size: clamp(0.9rem, min(2.2vw, 2.5vh), 3rem);
   }
 
   .subtitle {
@@ -575,7 +584,7 @@ input.has-error {
   }
 
   .field-group {
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
   }
 
   label {
@@ -587,7 +596,7 @@ input.has-error {
   }
 
   .btn-firmar {
-    margin-top: 1vh;
-    padding: 2vh;
+    margin-top: 0;
+    padding: 1.2vh;
   }
 }
