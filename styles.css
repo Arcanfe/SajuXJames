@@ -86,6 +86,9 @@ body {
   object-position: left;
 }
 
+.img-logo--mobile { display: none; }
+.img-logo--desktop { display: block; }
+
 .img-textos {
   width: 100%;
   max-height: clamp(60px, 12vh, 160px);
@@ -425,6 +428,9 @@ input.has-error {
 }
 
 @media (max-width: 768px) {
+  .img-logo--mobile { display: block; }
+  .img-logo--desktop { display: none; }
+
   body {
     height: auto;
     overflow: auto;

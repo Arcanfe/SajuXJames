@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(tick, 1000);
 
   // SVG fill: global progress — same for all users based on hardcoded start time
-  const FILL_START       = new Date('2026-05-20T01:00:00Z').getTime();
-  const FILL_DURATION_MS = 10 * 24 * 60 * 60 * 1000; // 10 días (19 → 29 de mayo)
+  const FILL_START       = new Date('2026-05-19T05:00:00Z').getTime();
+  const FILL_DURATION_MS = 42 * 24 * 60 * 60 * 1000; // 42 días (19 → 30 junio)
   const SVG_HEIGHT       = 500;
   const LINE_SPACING     = 8;
   const STROKE_BOTTOM    = 8;
