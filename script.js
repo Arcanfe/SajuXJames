@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSVGFill() {
     const elapsed  = Date.now() - FILL_START;
     const progress = Math.min(Math.max(elapsed / FILL_DURATION_MS, 0), 1);
-    const fillHeight = progress * SVG_HEIGHT;
+    const visualProgress = Math.min(progress + 0.13, 1);
+    const fillHeight = visualProgress * SVG_HEIGHT;
     const fillY      = SVG_HEIGHT - fillHeight;
 
     const pctEl = document.getElementById('logrado-pct');
