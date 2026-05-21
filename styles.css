@@ -115,7 +115,7 @@ body {
 }
 
 .field-group {
-  margin-bottom: clamp(0.4rem, 1.5vh, 1.8rem);
+  margin-bottom: clamp(0.3rem, 0.8vh, 1rem);
 }
 
 label {
@@ -126,7 +126,8 @@ label {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"] {
   width: 100%;
   padding: clamp(0.4rem, 1vh, 1rem) clamp(0.75rem, 1.2vw, 1.2rem);
   background-color: transparent;
@@ -136,16 +137,48 @@ input[type="email"] {
   border-radius: 4px;
   outline: none;
   transition: box-shadow 0.2s ease;
+  font-family: inherit;
 }
 
 input[type="text"]::placeholder,
-input[type="email"]::placeholder {
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
   color: rgba(144, 25, 19, 0.5);
 }
 
 input[type="text"]:focus,
-input[type="email"]:focus {
+input[type="email"]:focus,
+input[type="tel"]:focus {
   box-shadow: 0 0 0 3px rgba(144, 25, 19, 0.25);
+}
+
+.phone-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-wrapper select {
+  flex-shrink: 0;
+  padding: clamp(0.4rem, 1vh, 1rem) clamp(0.4rem, 0.8vw, 0.8rem);
+  background-color: transparent;
+  border: 2px solid #901913;
+  color: #901913;
+  font-size: clamp(0.85rem, min(1.2vw, 2vh), 2.2rem);
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.phone-wrapper select:focus {
+  box-shadow: 0 0 0 3px rgba(144, 25, 19, 0.25);
+}
+
+.phone-wrapper input[type="tel"] {
+  flex: 1;
+  min-width: 0;
+  width: auto;
 }
 
 input.has-error {
@@ -496,25 +529,38 @@ input.has-error {
   }
 
   .form-column input[type="text"],
-  .form-column input[type="email"] {
+  .form-column input[type="email"],
+  .form-column input[type="tel"] {
     border-color: #f1d469;
     color: #f1d469;
     background-color: transparent;
   }
 
   .form-column input[type="text"]::placeholder,
-  .form-column input[type="email"]::placeholder {
+  .form-column input[type="email"]::placeholder,
+  .form-column input[type="tel"]::placeholder {
     color: rgba(241, 212, 105, 0.5);
   }
 
   .form-column input[type="text"]:focus,
-  .form-column input[type="email"]:focus {
+  .form-column input[type="email"]:focus,
+  .form-column input[type="tel"]:focus {
     box-shadow: 0 0 0 3px rgba(241, 212, 105, 0.25);
   }
 
   .form-column input.has-error {
     border-color: #f1d469;
     box-shadow: 0 0 0 3px rgba(241, 212, 105, 0.3);
+  }
+
+  .form-column .phone-wrapper select {
+    border-color: #f1d469;
+    color: #f1d469;
+    background-color: transparent;
+  }
+
+  .form-column .phone-wrapper select:focus {
+    box-shadow: 0 0 0 3px rgba(241, 212, 105, 0.25);
   }
 
   .form-column .field-error {

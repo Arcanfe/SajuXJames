@@ -1,5 +1,5 @@
 // Replace this with your Google Apps Script deployment URL after setup
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxQ9qukREDtn5pvuF8esgQ9Z3F3Grxh8kR5vhA08Tda_nuDV-lpV7ZXPQRKkGmhNtI3w/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwsgu8U7hiqoL4-1av72OoL0nefH0-EAtweBLHR9v0qjZ04GN0570zj0RHZ9cFvDIqm7A/exec';
 
 // Countdown to FIFA World Cup 2026 opening match: June 11, 2026
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // SVG fill: global progress — same for all users based on hardcoded start time
   const FILL_START       = new Date('2026-05-19T05:00:00Z').getTime();
-  const FILL_DURATION_MS = 42 * 24 * 60 * 60 * 1000; // 42 días (19 → 30 junio)
+  const FILL_DURATION_MS = 11 * 24 * 60 * 60 * 1000; 
   const SVG_HEIGHT       = 500;
   const LINE_SPACING     = 8;
   const STROKE_BOTTOM    = 8;
@@ -68,12 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updateSVGFill, 1000);
 });
 
-const form        = document.getElementById('firma-form');
-const nombreInput = document.getElementById('nombre');
-const correoInput = document.getElementById('correo');
-const aceptaInput = document.getElementById('acepta');
-const submitBtn   = document.getElementById('submit-btn');
-const formStatus  = document.getElementById('form-status');
+const form          = document.getElementById('firma-form');
+const nombreInput   = document.getElementById('nombre');
+const correoInput   = document.getElementById('correo');
+const celularInput  = document.getElementById('celular');
+const aceptaInput   = document.getElementById('acepta');
+const submitBtn     = document.getElementById('submit-btn');
+const formStatus    = document.getElementById('form-status');
 
 function validateForm() {
   let isValid = true;
@@ -93,6 +94,15 @@ function validateForm() {
     isValid = false;
   } else if (!emailRegex.test(correoInput.value.trim())) {
     showFieldError('correo', 'Por favor ingresa un correo válido (ej: nombre@dominio.com).');
+    isValid = false;
+  }
+
+  const celularRegex = /^[0-9]{7,15}$/;
+  if (!celularInput.value.trim()) {
+    showFieldError('celular', 'Por favor ingresa tu número de celular.');
+    isValid = false;
+  } else if (!celularRegex.test(celularInput.value.trim())) {
+    showFieldError('celular', 'Ingresa solo dígitos (entre 7 y 15 caracteres).');
     isValid = false;
   }
 
@@ -116,7 +126,7 @@ function showFieldError(fieldName, message) {
 }
 
 function clearErrors() {
-  ['nombre', 'correo', 'acepta'].forEach(function(name) {
+  ['nombre', 'correo', 'celular', 'acepta'].forEach(function(name) {
     const input = document.getElementById(name);
     const errorSpan = document.getElementById('error-' + name);
     if (input) input.classList.remove('has-error');
@@ -163,6 +173,7 @@ form.addEventListener('submit', async function(e) {
   const payload = {
     nombre:          nombreInput.value.trim(),
     correo:          correoInput.value.trim(),
+    celular:         document.getElementById('indicativo').value + ' ' + celularInput.value.trim(),
     acepta_terminos: aceptaInput.checked ? 'yes' : 'no'
   };
 
@@ -199,7 +210,7 @@ document.getElementById('modal-close').addEventListener('click', function() {
   document.getElementById('success-modal').hidden = true;
 });
 
-[nombreInput, correoInput].forEach(function(input) {
+[nombreInput, correoInput, celularInput].forEach(function(input) {
   input.addEventListener('input', function() {
     this.classList.remove('has-error');
     const errorSpan = document.getElementById('error-' + this.id);
