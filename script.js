@@ -1,5 +1,5 @@
 // Replace this with your Google Apps Script deployment URL after setup
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDbq7UvNGKhZPVkTTTk1U6PQuAwoocIKcXXs8O0wb-NfpLbkQYz8M0F7kCuFUAmunSmg/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx-QUBI_uXwRHuzTtf-YS_9EJuSUeWHPEiM8RlydGErQnU0-cELGmf2Aad1Pmo2WTbz/exec';
 
 // Countdown to FIFA World Cup 2026 opening match: June 11, 2026
 document.addEventListener('DOMContentLoaded', function() {
