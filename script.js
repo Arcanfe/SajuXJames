@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateSVGFill() {
     const elapsed  = Date.now() - FILL_START;
     const progress = Math.min(Math.max(elapsed / FILL_DURATION_MS, 0), 1);
-    const visualProgress = Math.min(progress + 0.13, 1);
+    const visualProgress = Math.min(progress + 0.0, 1); // El 0.0 define cuanto se ve de adicional en porcentaje. Ej: 0.13 = 13% adicional en la visual.
     const fillHeight = visualProgress * SVG_HEIGHT;
     const fillY      = SVG_HEIGHT - fillHeight;
 
