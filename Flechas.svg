@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374.97 68.49">
+  <g fill="none" stroke="#84251c" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Chevron doble 1 -->
+    <polyline points="20 6 60 30 100 6"/>
+    <polyline points="20 38 60 62 100 38"/>
+    <!-- Chevron doble 2 -->
+    <polyline points="145 6 185 30 225 6"/>
+    <polyline points="145 38 185 62 225 38"/>
+    <!-- Chevron doble 3 -->
+    <polyline points="270 6 310 30 350 6"/>
+    <polyline points="270 38 310 62 350 38"/>
+  </g>
+</svg>
